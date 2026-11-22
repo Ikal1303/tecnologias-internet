@@ -1,12 +1,31 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+
+export interface Producto {
+  nombre: string;
+  precio: number;
+  disponible: boolean;
+}
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('tenologias-internet');
+  nombreTienda: string = 'Tienda para el Estudiante';
+  encargado: string = 'Erik Alberto Ortega Torrico';
+  numeroSucursal: number = 3;
+  tiendaAbierta: boolean = true;
+  categorias: string[] = [
+    'Cuadernos y Libretas',
+    'Mochilas y Estuches',
+    'Calculadoras y Papelería'
+  ];
+
+  producto: Producto = {
+    nombre: 'Mochila Universitaria Impermeable',
+    precio: 185,
+    disponible: true
+  };
 }
